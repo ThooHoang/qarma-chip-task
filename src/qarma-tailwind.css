@@ -1,0 +1,723 @@
+@import "tailwindcss";
+
+@theme {
+    /** Border colors **/
+    --border-color-default: #1b1b1bff;
+    --border-color-subtle-1: #676767ff;
+    --border-color-subtle-2: #b5b5b5ff;
+    --border-color-subtle-3: #ccccccff;
+    --border-color-subtle-4: #ebebebff;
+    --border-color-inverse: #ffffffff;
+    --border-color-inverse-subtle-1: #949494ff;
+    --border-color-inverse-subtle-2: #767676ff;
+    --border-color-inverse-subtle-3: #545454ff;
+    --border-color-inverse-subtle-4: #2e2e2eff;
+    --border-color-brand: #00ad61ff;
+    --border-color-brand-subtle-2: #006456ff;
+    --border-color-brand-accent: #004869ff;
+    --border-color-brand-accent--subtle-1: #19678aff;
+    --border-color-invisible: #00000000;
+    --border-color-disabled: #ccccccff;
+    --border-color-body: #f3f3f3ff;
+    --border-color-success: #0f8763ff;
+    --border-color-attention: #ffa407ff;
+    --border-color-danger: #d8220aff;
+    --border-color-ai: #550ed0ff;
+    --border-color-color-focus: #0079d1ff;
+    --border-color-link-level-1: #004869ff;
+    --border-color-link-level-2: #b5b5b5ff;
+    --border-color-link-level-3-hover: #004869ff;
+    --border-color-link-level-4-hover: #b5b5b5ff;
+    --border-color-color-input: #b5b5b5ff;
+    --border-color-color-input-active: #676767ff;
+    --border-color-color-input-error: #d8220aff;
+    --border-color-color-input-toggle-button-checked: #1b1b1bff;
+    --border-color-color-input-toggle-button: #1b1b1bff;
+    --border-color-color-status-light-gray: #ccccccff;
+    --border-color-color-status-outline-surface-default: #ffffffff;
+    --border-color-color-chip: #ccccccff;
+    --border-color-color-chip-selected: #3f3f3fff;
+
+    /** Background colors **/
+    --background-color-default: #ffffffff;
+    --background-color-body: #f3f3f3ff;
+    --background-color-subtle-1: #ccccccff;
+    --background-color-subtle-2: #ebebebff;
+    --background-color-subtle-3: #f3f3f3ff;
+    --background-color-inverse: #1b1b1bff;
+    --background-color-inverse-subtle-1: #3f3f3fff;
+    --background-color-inverse-subtle-2: #2e2e2eff;
+    --background-color-brand: #00ad61ff;
+    --background-color-brand-subtle-1: #d4f1e4ff;
+    --background-color-brand-accent: #004869ff;
+    --background-color-brand-accent-subtle-1: #19678aff;
+    --background-color-brand-accent-subtle-2: #739db0ff;
+    --background-color-invisible: #00000000;
+    --background-color-disabled: #ebebebff;
+    --background-color-success: #0f8763ff;
+    --background-color-success-subtle-1: #ccf9daff;
+    --background-color-attention: #ffa407ff;
+    --background-color-attention-subtle-1: #fff4cdff;
+    --background-color-danger: #d8220aff;
+    --background-color-danger-subtle-1: #fde1ccff;
+    --background-color-ai: #550ed0ff;
+    --background-color-ai-subtle-1: #d7caeeff;
+    --background-color-status-light-green: #4fce82ff;
+    --background-color-status-light-green-subtle-1: #dcffe7ff;
+    --background-color-status-green: #0f8763ff;
+    --background-color-status-green-subtle-1: #ccf9daff;
+    --background-color-status-dark-green: #1b664fff;
+    --background-color-status-dark-green-subtle-1: #afe4bfff;
+    --background-color-status-blue: #0079d1ff;
+    --background-color-status-blue-subtle-1: #8dcefdff;
+    --background-color-status-dark-blue: #00538fff;
+    --background-color-status-dark-blue-subtle-1: #72b4e3ff;
+    --background-color-status-yellow: #ffc907ff;
+    --background-color-status-yellow-subtle-1: #fff1cdff;
+    --background-color-status-orange: #ff9a02ff;
+    --background-color-status-orange-subtle-1: #ffebc9ff;
+    --background-color-status-dark-orange: #be5900ff;
+    --background-color-status-dark-orange-subtle-1: #ffe4b8ff;
+    --background-color-status-red: #d8220aff;
+    --background-color-status-red-subtle-1: #fde1ccff;
+    --background-color-status-dark-red: #8f1100ff;
+    --background-color-status-dark-red-subtle-1: #eac5bfff;
+    --background-color-status-black: #2e2e2eff;
+    --background-color-status-black-subtle-1: #ccccccff;
+    --background-color-status-gray: #767676ff;
+    --background-color-status-gray-subtle-1: #ebebebff;
+    --background-color-status-light-gray: #b5b5b5ff;
+    --background-color-status-light-gray-subtle-1: #ffffffff;
+    --background-color-selection-active: #c3d7e0ff;
+    --background-color-selection-active-hover: #aac4cfff;
+    --background-color-selection-context-button-level-4-hover: #ffffffff;
+    --background-color-hover-from-default: #ebebebff;
+    --background-color-hover-from-subtle-1: #ebebebff;
+    --background-color-hover-from-subtle-2: #ccccccff;
+    --background-color-hover-from-brand-accent: #19678aff;
+    --background-color-hover-on-colorised: #0000001a;
+    --background-color-hover-on-colorised-inverse: #ffffff80;
+    --background-color-hover-on-colorised-inverse-subtle: #ffffff26;
+    --background-color-button-level-1: #004869ff;
+    --background-color-button-level-1-hover: #19678aff;
+    --background-color-button-level-2: #ebebebff;
+    --background-color-button-level-2-hover: #ccccccff;
+    --background-color-button-level-3-hover: #ebebebff;
+    --background-color-button-level-4-hover: #ebebebff;
+    --background-color-divider-subtle-color: #ebebebff;
+    --background-color-input: #ffffffff;
+    --background-color-input-hover: #ebebebff;
+    --background-color-input-colorised-hover: #0000001a;
+    --background-color-input-colorised-hover-inverse: #ffffff80;
+    --background-color-input-colorised-hover-inverse-subtle: #ffffff26;
+    --background-color-sheet-overlay: #00000099;
+    --background-color-block: #ffffffff;
+    --background-color-block-hover: #f3f3f3ff;
+    --background-color-block-updated: #f0faf5ff;
+    --background-color-status-summary: #ebebebff;
+    --background-color-chip: #ffffffff;
+    --background-color-chip-hover: #ebebebff;
+    --background-color-chip-remove-button-hover: #ccccccff;
+    --background-color-chip-selected: #3f3f3fff;
+    --background-color-chip-selected-hover: #2e2e2eff;
+
+    /** Text colors **/
+    --text-color-default: #1b1b1bff;
+    --text-color-subtle-1: #2e2e2eff;
+    --text-color-subtle-2: #6e6e6eff;
+    --text-color-inverse: #ffffffff;
+    --text-color-inverse-subtle-1: #ebebebff;
+    --text-color-inverse-subtle-2: #b5b5b5ff;
+    --text-color-brand: #006456ff;
+    --text-color-brand-accent: #19678aff;
+    --text-color-brand-accent-subtle-1: #004869ff;
+    --text-color-disabled: #b5b5b5ff;
+    --text-color-invisible: #00000000;
+    --text-color-success: #0f8763ff;
+    --text-color-success-subtle-2: #044e43ff;
+    --text-color-attention: #ffa407ff;
+    --text-color-attention-subtle-2: #452203ff;
+    --text-color-danger: #d8220aff;
+    --text-color-danger-subtle-2: #75071dff;
+    --text-color-ai: #550ed0ff;
+    --text-color-ai-subtle-2: #370b84ff;
+    --text-color-status-light-green-subtle-2: #156a44ff;
+    --text-color-status-green-subtle-2: #044e43ff;
+    --text-color-status-dark-green-subtle-2: #033e36ff;
+    --text-color-status-blue-subtle-2: #002b5cff;
+    --text-color-status-dark-blue-subtle-2: #002651ff;
+    --text-color-status-yellow-subtle-2: #5e5203ff;
+    --text-color-status-orange-subtle-2: #904707ff;
+    --text-color-status-dark-orange-subtle-2: #693405ff;
+    --text-color-status-red-subtle-2: #75071dff;
+    --text-color-status-dark-red-subtle-2: #510212ff;
+    --text-color-status-black-subtle-2: #1b1b1bff;
+    --text-color-status-gray-subtle-2: #2e2e2eff;
+    --text-color-status-light-gray-subtle-2: #6e6e6eff;
+    --text-color-selectable-subtle-2: #00000091;
+    --text-color-selection-context-button-level-4: #00000096;
+    --text-color-on-system: #ffffffff;
+    --text-color-inverse-on-system: #2e2e2eff;
+    --text-color-hover-from-brand-accent: #004869ff;
+    --text-color-hover-from-text-default: #6e6e6eff;
+    --text-color-hover-from-text-subtle-2: #2e2e2eff;
+    --text-color-button-level-1: #ffffffff;
+    --text-color-button-level-2: #1b1b1bff;
+    --text-color-button-level-3: #19678aff;
+    --text-color-button-level-4: #6e6e6eff;
+    --text-color-link-level-1: #19678aff;
+    --text-color-link-level-1-hover: #004869ff;
+    --text-color-link-level-2: #1b1b1bff;
+    --text-color-link-level-2-hover: #6e6e6eff;
+    --text-color-link-level-3: #19678aff;
+    --text-color-link-level-3-hover: #004869ff;
+    --text-color-link-level-4: #6e6e6eff;
+    --text-color-link-level-4-hover: #2e2e2eff;
+    --text-color-input-placeholder: #6e6e6eff;
+    --text-color-input-value: #1b1b1bff;
+    --text-color-input-value-subtle: #2e2e2eff;
+    --text-color-input-label: #3f3f3fff;
+    --text-color-input-label-level-1: #1b1b1bff;
+    --text-color-input-hint: #6e6e6eff;
+    --text-color-input-error: #d8220aff;
+    --text-color-empty-state: #6e6e6eff;
+    --text-color-on-status: #ffffffff;
+    --text-color-inverse-on-status: #2e2e2eff;
+    --text-color-status-level-4: #1b1b1bff;
+    --text-color-chip: #1b1b1bff;
+    --text-color-chip-selected: #ffffffff;
+    --text-color-chip-button-level-2: #6e6e6eff;
+    --text-color-chip-remove-button-hover: #2e2e2eff;
+    --text-color-data-item-value: #1b1b1bff;
+    --text-color-data-item-key: #1b1b1bff;
+    --text-color-data-item-key-subtle: #6e6e6eff;
+
+    /** Fonts **/
+    --font-display: Poppins;
+	--font-ui: Inter;
+	--font-body: Inter;
+
+    /** Text sizes **/
+    --text-display-1: 2rem;
+	--text-display-2: 1.625rem;
+	--text-display-3: 1.375rem;
+	--text-display-4: 1.125rem;
+	--text-display-5: 1rem;
+	--text-display-6: 0.875rem;
+	--text-ui-2xl: 1.375rem;
+	--text-ui-xl: 1.125rem;
+	--text-ui-lg: 1rem;
+	--text-ui-base: 0.875rem;
+	--text-ui-sm: 0.75rem;
+	--text-ui-tiny: 0.625rem;
+
+    /** Spacing **/
+    --spacing-0: 0;
+	--spacing-1: 0.125rem;
+	--spacing-2: 0.25rem;
+	--spacing-3: 0.375rem;
+	--spacing-4: 0.5rem;
+	--spacing-5: 0.625rem;
+	--spacing-6: 0.75rem;
+	--spacing-8: 1rem;
+	--spacing-10: 1.25rem;
+	--spacing-12: 1.5rem;
+	--spacing-16: 2rem;
+	--spacing-19: 2.375rem;
+	--spacing-20: 2.5rem;
+	--spacing-24: 3rem;
+	--spacing-32: 4rem;
+	--spacing-40: 5rem;
+	--spacing-48: 6rem;
+	--spacing-80: 10rem;
+	--spacing-96: 12rem;
+	--spacing-page-content-constrained-narrow: 36.875rem;
+	--spacing-page-content-constrained-medium: 75rem;
+	--spacing-page-content-constrained-wide: 112.5rem;
+	--spacing-page-side-panel: 20rem;
+	--spacing-page-side-panel-wide: 23.75rem;
+	--spacing-page-max: 162.5rem;
+	--spacing-page-min: 58.75rem;
+	--spacing-page-end: 6rem;
+	--spacing-page-between-header-and-content: 2rem;
+	--spacing-page-content-to-footer: 3rem;
+	--spacing-page-main-panel-x: 1.5rem;
+	--spacing-page-main-panel-y: 1.5rem;
+	--spacing-page-navigation-to-main: 0.0625rem;
+	--spacing-text-base-max: 34.375rem;
+	--spacing-ui-base-to-tiny: 0.1875rem;
+	--spacing-ui-base-to-small: 0.375rem;
+	--spacing-body-base-to-small: 0.09375rem;
+	--spacing-ui-sm-to-small: 0.40625rem;
+	--spacing-component-large: 3rem;
+	--spacing-component-medium: 2.375rem;
+	--spacing-component-small: 1.375rem;
+	--spacing-component-tiny: 1rem;
+	--spacing-tiny-to-small: 0.1875rem;
+	--spacing-content-header-display-2-top: 0.75rem;
+	--spacing-content-header-display-2-bottom: 1.5rem;
+	--spacing-content-header-display-3-top: 0.5rem;
+	--spacing-content-header-display-3-bottom: 1.25rem;
+	--spacing-content-header-display-4-top: 0.25rem;
+	--spacing-content-header-display-4-bottom: 1rem;
+	--spacing-content-header-display-5-top: 0;
+	--spacing-content-header-display-5-bottom: 0.75rem;
+	--spacing-trimmed-tiny: 0.4375rem;
+	--spacing-trimmed-sm: 0.5625rem;
+	--spacing-trimmed-base: 0.625rem;
+	--spacing-trimmed-lg: 0.75rem;
+	--spacing-trimmed-xl: 0.8125rem;
+	--spacing-trimmed-2xl: 1rem;
+	--spacing-icon-sm: 0.75rem;
+	--spacing-icon-base: 0.875rem;
+	--spacing-icon-lg: 1rem;
+	--spacing-icon-xl: 1.25rem;
+	--spacing-icon-2xl: 1.5rem;
+	--spacing-icon-3xl: 2rem;
+	--spacing-icon-text-sm: 0.875rem;
+	--spacing-icon-text-base: 0.875rem;
+	--spacing-icon-text-lg: 1rem;
+	--spacing-icon-text-xl: 1rem;
+	--spacing-icon-text-2xl: 1.25rem;
+	--spacing-icon-to-text: 0.25rem;
+	--spacing-divider-width: 0.0625rem;
+	--spacing-divider-indention: 0.1875rem;
+	--spacing-block-list-column-button-medium-level-3: 2.8125rem;
+	--spacing-block-list-column-button-small-level-3: 1.6875rem;
+	--spacing-block-y-default: 1.25rem;
+	--spacing-block-y-small: 0.375rem;
+	--spacing-block-y-list-item: 0.75rem;
+	--spacing-block-y-list-item-small: 0.5rem;
+	--spacing-block-y-card: 1.25rem;
+	--spacing-block-y-card-small: 0.625rem;
+	--spacing-block-interactive-inset: 0.25rem;
+	--spacing-block-interactive-y-default: 1rem;
+	--spacing-block-interactive-y-small: 0.125rem;
+	--spacing-block-interactive-y-list-item-default: 0.5rem;
+	--spacing-block-interactive-y-list-item-small: 0.25rem;
+	--spacing-block-interactive-y-card: 1rem;
+	--spacing-block-interactive-y-card-small: 0.375rem;
+	--spacing-block-column-header-y: 0.75rem;
+	--spacing-block-column-header-top-first-child: 1.25rem;
+	--spacing-block-content-column-divider-inset: 0.125rem;
+	--spacing-block-expanded-above: 2rem;
+	--spacing-block-parent-dense: 0.0625rem;
+	--spacing-block-parent-default: 0.5rem;
+	--spacing-block-children: 1.5rem;
+	--spacing-block-content-division-x: 1.5rem;
+	--spacing-block-content-division-y: 1.25rem;
+	--spacing-block-interactive-to-inline-tools: 1.25rem;
+	--spacing-chip-group-small-x: 0.125rem;
+	--spacing-chip-group-small-y: 0.25rem;
+	--spacing-chip-group-medium-x: 0.25rem;
+	--spacing-chip-group-medium-y: 0.25rem;
+	--spacing-chip-small-content-to-inline-button: -0.5rem;
+	--spacing-chip-medium-content-to-inline-button: -1.125rem;
+	--spacing-chip-small-inline-button: 1.25rem;
+	--spacing-chip-medium-inline-button: 2.25rem;
+	--spacing-chip-tiny-min: 1.75rem;
+	--spacing-chip-small-min: 2.125rem;
+	--spacing-chip-medium-min: 4rem;
+	--spacing-chip-tiny-y: 0.21875rem;
+	--spacing-chip-tiny-x: 0.5rem;
+	--spacing-chip-small-x: 0.625rem;
+	--spacing-chip-small-y: 0.34375rem;
+	--spacing-chip-medium-x: 1rem;
+	--spacing-chip-medium-y: 0.25rem;
+	--spacing-status-dot-small: 0.625rem;
+	--spacing-status-dot-medium: 0.75rem;
+	--spacing-status-dot-large: 1rem;
+	--spacing-status-badge-large: 1.75rem;
+	--spacing-status-donut-slice: 0.625rem;
+	--spacing-status-donut-hole: 1.125rem;
+	--spacing-status-donut-radius: 1.1875rem;
+	--spacing-status-badge-to-text: 0.375rem;
+	--spacing-status-badge-to-text-large: 0.5rem;
+	--spacing-status-previous-to-current-badge-large: 0;
+	--spacing-status-previous-to-current-badge-small: 0;
+	--spacing-status-previous-to-current-badge-tiny: 0.0625rem;
+	--spacing-status-previous-to-current-dot-large: -0.1875rem;
+	--spacing-status-previous-to-current-dot-medium: -0.09375rem;
+	--spacing-status-previous-to-current-dot-small: -0.0625rem;
+	--spacing-status-summary-bar-ordered: 0.125rem;
+	--spacing-status-tag-group: 0.125rem;
+	--spacing-status-badge-medium-x: 0.25rem;
+	--spacing-status-badge-small-x: 0.25rem;
+	--spacing-status-badge-tiny-x: 0.1875rem;
+	--spacing-status-dot-level-1-large: 0.125rem;
+	--spacing-status-dot-level-1-medium: 0.125rem;
+	--spacing-status-dot-level-1-small: 0.375rem;
+	--spacing-status-dot-level-1-tiny: 0.25rem;
+	--spacing-status-tag-large-x: 0.625rem;
+	--spacing-status-tag-large-y: 0.625rem;
+	--spacing-status-tag-medium-x: 0.5rem;
+	--spacing-status-tag-medium-y: 0.5rem;
+	--spacing-status-tag-small-x: 0.375rem;
+	--spacing-status-tag-small-y: 0.375rem;
+	--spacing-status-tag-tiny-x: 0.25rem;
+	--spacing-status-tag-tiny-y: 0.375rem;
+	--spacing-status-label-large-y: 0.5rem;
+	--spacing-status-label-medium-y: 0.375rem;
+	--spacing-status-label-small-y: 0.375rem;
+	--spacing-status-label-tiny-y: 0.21875rem;
+	--spacing-menu-item-x: 0.625rem;
+	--spacing-menu-item-y: 0.25rem;
+	--spacing-menu-droplist-item-x: 0.5rem;
+	--spacing-menu-droplist-item-y: 0.1875rem;
+	--spacing-menu-divider-y: 0.5rem;
+	--spacing-menu-droplist-divider-y: 0.375rem;
+	--spacing-menu-item-to-tag: 0.5rem;
+	--spacing-menu-item-to-inline-tools: 0.75rem;
+	--spacing-menu-droplist-between-items: 0.0625rem;
+	--spacing-global-navigation: 17.5rem;
+	--spacing-global-navigation-collapsed: 4rem;
+	--spacing-global-navigation-top: 10.75rem;
+	--spacing-global-navigation-logo-horizontal: 2rem;
+	--spacing-global-navigation-y: 2rem;
+	--spacing-global-navigation-y-horizontal: 0.625rem;
+	--spacing-global-navigation-footer-y: 1rem;
+	--spacing-global-navigation-x: 1.5rem;
+	--spacing-global-navigation-menu-x: 0.875rem;
+	--spacing-global-navigation-footer-right: 1rem;
+	--spacing-global-navigation-collapsed-toggle-displacement: 0.5rem;
+	--spacing-global-navigation-logo-to-search: 2rem;
+	--spacing-global-navigation-between-sections: 2rem;
+	--spacing-global-navigation-user-to-button: 1rem;
+	--spacing-global-navigation-block-division: 0.0625rem;
+	--spacing-page-header-toolbar-y: 0.5rem;
+	--spacing-page-header-y: 2rem;
+	--spacing-page-header-y-bottom: 1.5rem;
+	--spacing-page-header-no-meta-data-y-bottom: 0.25rem;
+	--spacing-page-header-content-min-default: 7.25rem;
+	--spacing-page-header-content-min-toolbar-contained: 3.8125rem;
+	--spacing-page-header-logo-max-width: 13.75rem;
+	--spacing-page-header-logo-max-height: 5.25rem;
+	--spacing-button-icon-to-text: 0.375rem;
+	--spacing-button-large-x: 1.5rem;
+	--spacing-button-large-y: 0.375rem;
+	--spacing-button-medium-x: 1rem;
+	--spacing-button-medium-y: 0.25rem;
+	--spacing-button-small-x: 0.75rem;
+	--spacing-button-small-y: 0.25rem;
+	--spacing-link-icon-to-text: 0.25rem;
+	--spacing-input-radio-button-dot: 0.625rem;
+	--spacing-input-toggle-handle: 1.125rem;
+	--spacing-input-textarea-default: 5rem;
+	--spacing-input-textarea-default-toolbar-on-focus: 2.9375rem;
+	--spacing-input-textarea-max: 25rem;
+	--spacing-input-max: 34.375rem;
+	--spacing-input-textarea-min: 2.375rem;
+	--spacing-input-medium-inner: 2.25rem;
+	--spacing-input-field-x: 0.75rem;
+	--spacing-input-field-y-ui-text: 0.8125rem;
+	--spacing-input-field-y-body-text: 0.53125rem;
+	--spacing-input-small-component-y: 0.4375rem;
+	--spacing-input-button-label-offest-y: 0.375rem;
+	--spacing-input-button-label-sm-offest-y: 0.40625rem;
+	--spacing-input-fieldset-buttons-y: 0.25rem;
+	--spacing-input-fieldset-framed-y: 0.625rem;
+	--spacing-input-labels-to-field-y: 0.5rem;
+	--spacing-input-button-to-label: 0.375rem;
+	--spacing-input-between-buttons-y: 0.75rem;
+	--spacing-input-between-fields-y: 1.25rem;
+	--spacing-input-form-to-submit: 1.5rem;
+	--spacing-input-icon-to-value: 0.375rem;
+	--spacing-input-inside-labels: 1rem;
+	--spacing-input-content-to-toolbar: 0.25rem;
+	--spacing-input-content-to-toolbar-frammed-fieldset: 0.0625rem;
+	--spacing-toolgroup-large-x: 1rem;
+	--spacing-toolgroup-medium-x: 0.75rem;
+	--spacing-toolgroup-medium-level-3-neighbour-x: 0.375rem;
+	--spacing-toolgroup-medium-level-3-sibiling-x: 0.25rem;
+	--spacing-toolgroup-small-x: 0.5rem;
+	--spacing-toolgroup-small-ghost-neighbour-x: 0.25rem;
+	--spacing-toolgroup-small-level-3-sibling-x: 0.125rem;
+	--spacing-toolgroup-last-child: 0;
+	--spacing-toolgroup-large-y: 0.75rem;
+	--spacing-toolgroup-medium-y: 0.5rem;
+	--spacing-toolgroup-small-y: 0.375rem;
+	--spacing-data-item-horizontal-key: 12.5rem;
+	--spacing-data-item-horizontal-right-value: 4.375rem;
+	--spacing-data-list-horizontal-with-keys-top-items-max: 20rem;
+	--spacing-data-item-top-key-to-value: 0.5rem;
+	--spacing-data-item-top-key-to-large-value: 0.625rem;
+	--spacing-data-item-left-key-to-value: 1rem;
+	--spacing-data-item-snug-left-key-to-value: 0.25rem;
+	--spacing-data-list-vertical-with-keys-left-y: 0.5rem;
+	--spacing-data-list-vertical-with-keys-top-y: 1rem;
+	--spacing-data-list-horizontal-with-keys-top-x: 1rem;
+	--spacing-data-list-horizontal-with-keys-top-y: 1rem;
+	--spacing-data-list-horizontal-with-large-values-x: 2rem;
+	--spacing-data-list-horizontal-snug-x: 1rem;
+	--spacing-data-list-horizontal-snug-y: 0.5rem;
+	--spacing-list-column-default: 1.5rem;
+	--spacing-list-column-reduced-gap: 0.75rem;
+	--spacing-list-cell-row-default: 1rem;
+	--spacing-list-cell-row-reduced-gap: 0.5rem;
+	--spacing-panel-default: 37.375rem;
+	--spacing-panel-medium: 78rem;
+	--spacing-panel-wide: 103rem;
+	--spacing-panel-x-modal-view: 1.5rem;
+	--spacing-panel-y: 1.25rem;
+	--spacing-panel-y-inner-modal-view: 0.75rem;
+	--spacing-panel-actions-top: 1rem;
+	--spacing-panel-heading-to-controls: 1.25rem;
+	--spacing-panel-content-division-y: 1.25rem;
+	--spacing-spinner-tiny: 0.75rem;
+	--spacing-spinner-small: 1rem;
+	--spacing-spinner-medium: 1.75rem;
+	--spacing-spinner-large: 2.375rem;
+	--spacing-spinner-block-content-max: 15rem;
+	--spacing-spinner-block-min: 6.125rem;
+	--spacing-popover-x: 1.25rem;
+	--spacing-popover-y: 1.25rem;
+	--spacing-popover-menu-x: 0.625rem;
+	--spacing-popover-menu-y: 0.5625rem;
+	--spacing-popover-droplist-x: 0.3125rem;
+	--spacing-popover-droplist-y: 0.625rem;
+	--spacing-popover-default: 15rem;
+	--spacing-popover-medium: 27.5rem;
+	--spacing-popover-large: 36.875rem;
+	--spacing-popover-extra-large: 53.125rem;
+	--spacing-popover-droplist-scroll-area-max: 25rem;
+	--spacing-popover-droplist: 20rem;
+	--spacing-popover-offset: 0.375rem;
+	--spacing-tooltip-offset: 0.375rem;
+	--spacing-tooltip-content-max: 12rem;
+    --spacing-trimmed-display-1: 1.375rem;
+	--spacing-trimmed-display-2: 1.125rem;
+	--spacing-trimmed-display-3: 0.9375rem;
+	--spacing-trimmed-display-4: 0.8125rem;
+	--spacing-trimmed-display-5: 0.6875rem;
+	--spacing-trimmed-display-6: 0.625rem;
+	--spacing-body-2xl: 1.875rem;
+	--spacing-body-xl: 1.5625rem;
+	--spacing-body-lg: 1.375rem;
+	--spacing-body-base: 1.1875rem;
+	--spacing-body-sm: 1.0625rem;
+	--spacing-screen-breakpoint: 0;
+	--spacing-page-x: 0;
+	--spacing-page-x-excluding-panel-gaps: 0;
+	--spacing-content-indent-x: 0.75rem;
+	--spacing-page-between-panels: 0;
+	--spacing-page-header-x: 0.75rem;
+	--spacing-page-header-y-compressed: 0.75rem;
+	--spacing-page-header-columns: 0.375rem;
+	--spacing-panel-x-sheet: 0;
+	--spacing-block-x: 0.75rem;
+	--spacing-block-interactive-x: 0.5rem;
+	--spacing-block-indent-child: 1.25rem;
+	--spacing-breakpoint: 0;
+
+    /** Leading **/
+    --leading-display-1: 2.375rem;
+	--leading-display-2: 1.9375rem;
+	--leading-display-3: 1.625rem;
+	--leading-display-4: 1.375rem;
+	--leading-display-5: 1.1875rem;
+	--leading-display-6: 1.0625rem;
+	--leading-ui-2xl: 1.625rem;
+	--leading-ui-xl: 1.375rem;
+	--leading-ui-lg: 1.1875rem;
+	--leading-ui-base: 1.0625rem;
+	--leading-ui-sm: 0.875rem;
+	--leading-ui-tiny: 0.75rem;
+	--leading-body-2xl: 1.875rem;
+	--leading-body-xl: 1.5625rem;
+	--leading-body-lg: 1.375rem;
+	--leading-body-base: 1.1875rem;
+	--leading-body-sm: 1.0625rem;
+
+    /** Radius **/
+    --radius-none: 0;
+	--radius-x-small: 0.125rem;
+	--radius-small: 0.25rem;
+	--radius-regular: 0.5rem;
+	--radius-medium: 0.75rem;
+	--radius-large: 1rem;
+	--radius-x-large: 1.5rem;
+	--radius-round: 62.5rem;
+	--radius-block-interactive-part: 0.25rem;
+	--radius-block-expanded-left: 0.5rem;
+	--radius-block-children-default-left: 0.5rem;
+	--radius-block-children-dense-left: 0.125rem;
+	--radius-status-donut-radius: 1.1875rem;
+	--radius-status-tag-large: 0.5rem;
+	--radius-status-badge-large: 0.25rem;
+	--radius-status-badge-small: 0.25rem;
+	--radius-status-badge-tiny: 0.125rem;
+	--radius-menu-item: 0.25rem;
+	--radius-button-large: 0.5rem;
+	--radius-button-medium: 0.25rem;
+	--radius-button-small: 0.25rem;
+	--radius-input: 0.25rem;
+	--radius-popover: 0.5rem;
+
+    /** Border Widths **/
+    --border-width-regular: 0.0625rem;
+	--border-width-width-chip: 0.0625rem;
+	--border-width-width-status-light-gray: 0.0625rem;
+	--border-width-width-input: 0.0625rem;
+
+    /** Offsets **/
+    --offset-focus: 0.0625rem;
+
+    /** Outlines **/
+    --outline-width-focus: 0.125rem;
+	--outline-color-focus: #0079d1ff;
+
+    /** Font weights **/
+    --font-weight-display-style: Semibold;
+	--font-weight-display-alt-style: Regular;
+	--font-weight-ui-normal: Regular;
+	--font-weight-ui-emphasis: Semibold;
+	--font-weight-ui-strong: Bold;
+	--font-weight-ui-normal-italic: Regular Italic;
+	--font-weight-ui-tiny-weight: Medium;
+}
+
+
+/** Focus Utilities **/
+@utility outline-width-focus {
+    outline: var(--outline-width-focus)
+}
+
+@utility offset-focus {
+    outline-offset: var(--offset-focus)
+}
+
+@utility outline-color-focus {
+    outline-color: var(--outline-color-focus)
+}
+
+
+/** Text Styles **/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@utility trim {
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+}
+
+@layer base {
+	.display-1 { 
+		@apply font-display text-display-1 leading-display-1 font-semibold tracking-normal trim
+	}
+	.display-alt-1 { 
+		@apply font-display text-display-1 leading-display-1 font-normal tracking-normal trim
+	}
+	.display-2 { 
+		@apply font-display text-display-2 leading-display-2 font-semibold tracking-normal trim
+	}
+	.display-alt-2 { 
+		@apply font-display text-display-2 leading-display-2 font-normal tracking-normal trim
+	}
+	.display-3 { 
+		@apply font-display text-display-3 leading-display-3 font-semibold tracking-normal trim
+	}
+	.display-alt-3 { 
+		@apply font-display text-display-3 leading-display-3 font-normal tracking-normal trim
+	}
+	.display-4 { 
+		@apply font-display text-display-4 leading-display-4 font-semibold tracking-normal trim
+	}
+	.display-alt-4 { 
+		@apply font-display text-display-4 leading-display-4 font-normal tracking-normal trim
+	}
+	.display-5 { 
+		@apply font-display text-display-5 leading-display-5 font-semibold tracking-normal trim
+	}
+	.display-alt-5 { 
+		@apply font-display text-display-5 leading-display-5 font-normal tracking-normal trim
+	}
+	.display-6 { 
+		@apply font-display text-display-6 leading-display-6 font-semibold tracking-normal trim
+	}
+	.display-alt-6 { 
+		@apply font-display text-display-6 leading-display-6 font-normal tracking-normal trim
+	}
+	.ui-2xl-normal { 
+		@apply font-body text-ui-2xl leading-ui-2xl font-normal tracking-normal trim 
+	}
+	.ui-2xl-emphasis { 
+		@apply font-body text-ui-2xl leading-ui-2xl font-semibold tracking-normal trim 
+	}
+	.ui-2xl-strong { 
+		@apply font-body text-ui-2xl leading-ui-2xl font-bold tracking-normal trim 
+	}
+	.ui-xl-normal { 
+		@apply font-body text-ui-xl leading-ui-xl font-normal tracking-normal trim 
+	}
+	.ui-xl-emphasis { 
+		@apply font-body text-ui-xl leading-ui-xl font-semibold tracking-normal trim 
+	}
+	.ui-xl-strong { 
+		@apply font-body text-ui-xl leading-ui-xl font-bold tracking-normal trim 
+	}
+	.ui-lg-normal { 
+		@apply font-body text-ui-lg leading-ui-lg font-normal tracking-normal trim 
+	}
+	.ui-lg-emphasis { 
+		@apply font-body text-ui-lg leading-ui-lg font-semibold tracking-normal trim 
+	}
+	.ui-lg-strong { 
+		@apply font-body text-ui-lg leading-ui-lg font-bold tracking-normal trim 
+	}
+	.ui-base-normal { 
+		@apply font-body text-ui-base leading-ui-base font-normal tracking-normal trim 
+	}
+	.ui-base-emphasis { 
+		@apply font-body text-ui-base leading-ui-base font-semibold tracking-normal trim 
+	}
+	.ui-base-strong { 
+		@apply font-body text-ui-base leading-ui-base font-bold tracking-normal trim 
+	}
+	.ui-sm-normal { 
+		@apply font-body text-ui-sm leading-ui-sm font-normal tracking-normal trim 
+	}
+	.ui-sm-emphasis { 
+		@apply font-body text-ui-sm leading-ui-sm font-semibold tracking-normal trim 
+	}
+	.ui-sm-strong { 
+		@apply font-body text-ui-sm leading-ui-sm font-bold tracking-normal trim 
+	}
+	.body-2xl-normal { 
+		@apply font-body text-ui-2xl leading-body-2xl font-normal tracking-normal 
+	}
+	.body-2xl-strong { 
+		@apply font-body text-ui-2xl leading-body-2xl font-bold tracking-normal 
+	}
+	.body-xl-normal { 
+		@apply font-body text-ui-xl leading-ui-xl font-normal tracking-normal 
+	}
+	.body-xl-strong { 
+		@apply font-body text-ui-xl leading-body-xl font-bold tracking-normal 
+	}
+	.body-lg-normal { 
+		@apply font-body text-ui-lg leading-body-lg font-normal tracking-normal 
+	}
+	.body-lg-strong { 
+		@apply font-body text-ui-lg leading-body-lg font-bold tracking-normal 
+	}
+	.body-base-normal { 
+		@apply font-body text-ui-base leading-body-base font-normal tracking-normal 
+	}
+	.body-base-strong { 
+		@apply font-body text-ui-base leading-body-base font-bold tracking-normal 
+	}
+	.body-sm-normal { 
+		@apply font-body text-ui-sm leading-body-sm font-normal tracking-normal  
+	}
+	.body-sm-strong { 
+		@apply font-body text-ui-sm leading-body-sm font-bold tracking-normal  
+	}
+	.ui-base-strong-uppercase { 
+		@apply font-ui text-ui-base leading-ui-base font-bold tracking-normal trim uppercase 
+	}
+	.ui-sm-strong-uppercase { 
+		@apply font-ui text-ui-sm leading-ui-sm font-bold tracking-normal trim uppercase 
+	}
+	.ui-tiny { 
+		@apply font-ui text-ui-tiny leading-ui-tiny font-medium tracking-normal trim 
+	}
+}
