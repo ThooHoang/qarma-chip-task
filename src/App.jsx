@@ -7,10 +7,21 @@ function App() {
 
   return (
     <>
+    <div className="flex justify-center gap-2">
+      <Chip
+        label="Chip"
+        removable={true}
+        status="yellow"
+      />
       <Chip
         label="Home Decor"
-        removable={false}
+        removable={true}
       />
+      <Chip
+        label="Home Decor"
+        removable={true}
+      />
+    </div>
         
     </>
   )
