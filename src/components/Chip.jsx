@@ -21,7 +21,7 @@ const Chip = ({ label, onRemove }) => {
                 <button 
                     type="button" 
                     onClick={onRemove} 
-                    className="flex items-center justify-center w-full h-full hover:bg-chip-remove-button-hover rounded-round"
+                    className="flex items-center justify-center w-full h-full hover:bg-chip-remove-button-hover rounded-round focus:border-color-focus border border-transparent border-width-focus"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
