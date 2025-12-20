@@ -10,17 +10,18 @@ const Chip = ({ label, onRemove }) => {
             rounded-round 
             border border-width-chip border-color-chip 
             overflow-hidden
+            group
         ">
             
             <div className="flex items-center pl-chip-small-x py-chip-small-y pr-1">
                 <span className="text-chip ui-sm-normal">{label}</span>
             </div>
             
-            <div className="w-10 h-10 flex justify-center items-center">
+            <div className="w-chip-small-inline-button h-chip-small-inline-button flex justify-center items-center rounded-round group-hover:bg-chip-hover ">
                 <button 
                     type="button" 
                     onClick={onRemove} 
-                    className="flex items-center justify-center w-full h-full"
+                    className="flex items-center justify-center w-full h-full hover:bg-chip-remove-button-hover rounded-round"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

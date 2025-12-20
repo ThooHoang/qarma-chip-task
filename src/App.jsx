@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Chip
-        label="Chip"
+        label="Home Decor"
       />
         
     </>
