@@ -1,6 +1,6 @@
 import React from "react";
 
-const Chip = ({ label, onRemove }) => {
+const Chip = ({ label, removable, onRemove }) => {
     return (
         <div className="
             inline-flex items-center justify-center
@@ -13,27 +13,32 @@ const Chip = ({ label, onRemove }) => {
             group
         ">
             
-            <div className="flex items-center pl-chip-small-x py-chip-small-y pr-1">
+            <div className={`
+                flex items-center pl-chip-small-x py-chip-small-y 
+                ${removable ? "pr-1" : "pr-chip-small-x"}
+            `}>
                 <span className="text-chip ui-sm-normal">{label}</span>
             </div>
             
-            <div className="w-chip-small-inline-button h-chip-small-inline-button flex justify-center items-center rounded-round group-hover:bg-chip-hover ">
-                <button 
-                    type="button" 
-                    onClick={onRemove} 
-                    className="flex items-center justify-center w-full h-full hover:bg-chip-remove-button-hover rounded-round focus:border-color-focus border border-transparent border-width-focus text-chip-button-level-2 hover:text-chip-remove-button-hover"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 256 256"
-                        fill="currentColor"
+            {removable && (
+                <div className="w-chip-small-inline-button h-chip-small-inline-button flex justify-center items-center rounded-round group-hover:bg-chip-hover ">
+                    <button 
+                        type="button" 
+                        onClick={onRemove} 
+                        className="flex items-center justify-center w-full h-full hover:bg-chip-remove-button-hover rounded-round focus:border-color-focus border border-transparent border-width-focus text-chip-button-level-2 hover:text-chip-remove-button-hover"
                     >
-                        <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
-                    </svg>
-                </button>
-            </div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12" 
+                            height="12" 
+                            viewBox="0 0 256 256"
+                            fill="currentColor"
+                        >
+                            <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"></path>
+                        </svg>
+                    </button>
+                </div>
+            )}
         </div>
     );
 };

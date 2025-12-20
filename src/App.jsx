@@ -9,6 +9,7 @@ function App() {
     <>
       <Chip
         label="Home Decor"
+        removable={false}
       />
         
     </>
